@@ -1,0 +1,228 @@
+[2025-10-22 06:02:10] === VÉRIFICATION DES PRÉREQUIS ===
+[2025-10-22 06:02:10] ✅ ffmpeg trouvé
+[2025-10-22 06:02:10] ✅ xdpyinfo trouvé
+[2025-10-22 06:02:10] ✅ Tous les prérequis sont satisfaits
+[2025-10-22 06:02:10] Vérification des prérequis terminée.
+[2025-10-22 06:02:23] === VÉRIFICATION DES PRÉREQUIS ===
+[2025-10-22 06:02:23] ✅ ffmpeg trouvé
+[2025-10-22 06:02:23] ✅ xdpyinfo trouvé
+[2025-10-22 06:02:23] ✅ pactl trouvé
+[2025-10-22 06:02:23] ✅ Tous les prérequis sont satisfaits
+[2025-10-22 06:02:23] === DÉMARRAGE DU SCRIPT v3.0.1 ===
+[2025-10-22 06:02:23] Configuration: base=back_sound, durée_totale=0 (0=illimitée), segment_duration=120s
+[2025-10-22 06:02:23] Audio: device=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor, mic=0, mic_device=, volume=2.0, mute_output=1
+[2025-10-22 06:02:23] Diff: actif=0, target_dir=./diff_output, durée=0, interval=3, threshold=5, record_all=0
+[2025-10-22 06:02:23] Système: exec=1, simulate=0, target_dir=./record_back
+[2025-10-22 06:02:23] Muting sortie audio (volume original: 109%)
+[2025-10-22 06:02:23] Démarrage capture vidéo
+[2025-10-22 06:02:23] Démarrage segment #0 -> ./record_back/back_sound_20251022_060223_part0.mp4 (durée: 120s)
+[2025-10-22 06:04:23] Arrêt de ffmpeg (PID: 51325)
+[2025-10-22 06:04:23] Segment enregistré: ./record_back/back_sound_20251022_060223_part0.mp4 (taille: 6883898 octets)
+[2025-10-22 06:04:23] Amplification audio: ./record_back/back_sound_20251022_060223_part0.mp4 -> ./record_back/BOOST/back_sound_20251022_060223_part0_boost.mp4 (volume: 2.0)
+[2025-10-22 06:04:24] Amplification terminée: ./record_back/BOOST/back_sound_20251022_060223_part0_boost.mp4
+[2025-10-22 06:04:24] Fichier original supprimé: ./record_back/back_sound_20251022_060223_part0.mp4
+[2025-10-22 06:04:24] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_060223_part0.mp4
+[2025-10-22 06:04:24] Démarrage segment #1 -> ./record_back/back_sound_20251022_060424_part1.mp4 (durée: 120s)
+[2025-10-22 06:04:41] SIGINT reçu: arrêt en cours...
+[2025-10-22 06:04:41] Arrêt de ffmpeg (PID: 51617)
+[2025-10-22 06:04:42] Restauration du volume original à 109%
+[2025-10-22 06:04:42] Restauration du volume original à 109%
+[2025-10-22 06:09:25] === VÉRIFICATION DES PRÉREQUIS ===
+[2025-10-22 06:09:25] ✅ ffmpeg trouvé
+[2025-10-22 06:09:25] ✅ xdpyinfo trouvé
+[2025-10-22 06:09:25] ✅ pactl trouvé
+[2025-10-22 06:09:25] ✅ Tous les prérequis sont satisfaits
+[2025-10-22 06:09:25] === DÉMARRAGE DU SCRIPT v3.0.1 ===
+[2025-10-22 06:09:25] Configuration: base=back_sound, durée_totale=0 (0=illimitée), segment_duration=120s
+[2025-10-22 06:09:25] Audio: device=alsa_output.pci-0000_00_1f.3.analog-stereo.monitor, mic=0, mic_device=, volume=2.0, mute_output=1
+[2025-10-22 06:09:25] Diff: actif=0, target_dir=./diff_output, durée=0, interval=3, threshold=5, record_all=0
+[2025-10-22 06:09:25] Système: exec=1, simulate=0, target_dir=./record_back
+[2025-10-22 06:09:25] Muting sortie audio (volume original: 109%)
+[2025-10-22 06:09:25] Démarrage capture vidéo
+[2025-10-22 06:09:25] Démarrage segment #0 -> ./record_back/back_sound_20251022_060925_part0.mp4 (durée: 120s)
+[2025-10-22 06:11:25] Arrêt de ffmpeg (PID: 52910)
+[2025-10-22 06:11:27] Segment enregistré: ./record_back/back_sound_20251022_060925_part0.mp4 (taille: 6992022 octets)
+[2025-10-22 06:11:27] Amplification audio: ./record_back/back_sound_20251022_060925_part0.mp4 -> ./record_back/BOOST/back_sound_20251022_060925_part0_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:11:28] Amplification terminée: ./record_back/BOOST/back_sound_20251022_060925_part0_boost.mp4
+[2025-10-22 06:11:28] Fichier original supprimé: ./record_back/back_sound_20251022_060925_part0.mp4
+[2025-10-22 06:11:28] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_060925_part0.mp4
+[2025-10-22 06:11:28] Démarrage segment #1 -> ./record_back/back_sound_20251022_061128_part1.mp4 (durée: 120s)
+[2025-10-22 06:13:28] Arrêt de ffmpeg (PID: 53199)
+[2025-10-22 06:13:29] Segment enregistré: ./record_back/back_sound_20251022_061128_part1.mp4 (taille: 10028291 octets)
+[2025-10-22 06:13:29] Amplification audio: ./record_back/back_sound_20251022_061128_part1.mp4 -> ./record_back/BOOST/back_sound_20251022_061128_part1_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:13:30] Amplification terminée: ./record_back/BOOST/back_sound_20251022_061128_part1_boost.mp4
+[2025-10-22 06:13:30] Fichier original supprimé: ./record_back/back_sound_20251022_061128_part1.mp4
+[2025-10-22 06:13:30] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_061128_part1.mp4
+[2025-10-22 06:13:30] Démarrage segment #2 -> ./record_back/back_sound_20251022_061330_part2.mp4 (durée: 120s)
+[2025-10-22 06:15:30] Arrêt de ffmpeg (PID: 53361)
+[2025-10-22 06:15:31] Segment enregistré: ./record_back/back_sound_20251022_061330_part2.mp4 (taille: 11733833 octets)
+[2025-10-22 06:15:31] Amplification audio: ./record_back/back_sound_20251022_061330_part2.mp4 -> ./record_back/BOOST/back_sound_20251022_061330_part2_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:15:32] Amplification terminée: ./record_back/BOOST/back_sound_20251022_061330_part2_boost.mp4
+[2025-10-22 06:15:32] Fichier original supprimé: ./record_back/back_sound_20251022_061330_part2.mp4
+[2025-10-22 06:15:32] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_061330_part2.mp4
+[2025-10-22 06:15:32] Démarrage segment #3 -> ./record_back/back_sound_20251022_061532_part3.mp4 (durée: 120s)
+[2025-10-22 06:17:32] Arrêt de ffmpeg (PID: 53603)
+[2025-10-22 06:17:33] Segment enregistré: ./record_back/back_sound_20251022_061532_part3.mp4 (taille: 8524636 octets)
+[2025-10-22 06:17:33] Amplification audio: ./record_back/back_sound_20251022_061532_part3.mp4 -> ./record_back/BOOST/back_sound_20251022_061532_part3_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:17:33] Amplification terminée: ./record_back/BOOST/back_sound_20251022_061532_part3_boost.mp4
+[2025-10-22 06:17:33] Fichier original supprimé: ./record_back/back_sound_20251022_061532_part3.mp4
+[2025-10-22 06:17:33] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_061532_part3.mp4
+[2025-10-22 06:17:33] Démarrage segment #4 -> ./record_back/back_sound_20251022_061733_part4.mp4 (durée: 120s)
+[2025-10-22 06:19:33] Arrêt de ffmpeg (PID: 53808)
+[2025-10-22 06:19:34] Segment enregistré: ./record_back/back_sound_20251022_061733_part4.mp4 (taille: 10624722 octets)
+[2025-10-22 06:19:34] Amplification audio: ./record_back/back_sound_20251022_061733_part4.mp4 -> ./record_back/BOOST/back_sound_20251022_061733_part4_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:19:35] Amplification terminée: ./record_back/BOOST/back_sound_20251022_061733_part4_boost.mp4
+[2025-10-22 06:19:35] Fichier original supprimé: ./record_back/back_sound_20251022_061733_part4.mp4
+[2025-10-22 06:19:35] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_061733_part4.mp4
+[2025-10-22 06:19:35] Démarrage segment #5 -> ./record_back/back_sound_20251022_061935_part5.mp4 (durée: 120s)
+[2025-10-22 06:21:35] Arrêt de ffmpeg (PID: 54014)
+[2025-10-22 06:21:36] Segment enregistré: ./record_back/back_sound_20251022_061935_part5.mp4 (taille: 14236217 octets)
+[2025-10-22 06:21:36] Amplification audio: ./record_back/back_sound_20251022_061935_part5.mp4 -> ./record_back/BOOST/back_sound_20251022_061935_part5_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:21:37] Amplification terminée: ./record_back/BOOST/back_sound_20251022_061935_part5_boost.mp4
+[2025-10-22 06:21:37] Fichier original supprimé: ./record_back/back_sound_20251022_061935_part5.mp4
+[2025-10-22 06:21:37] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_061935_part5.mp4
+[2025-10-22 06:21:37] Démarrage segment #6 -> ./record_back/back_sound_20251022_062137_part6.mp4 (durée: 120s)
+[2025-10-22 06:23:37] Arrêt de ffmpeg (PID: 54178)
+[2025-10-22 06:23:38] Segment enregistré: ./record_back/back_sound_20251022_062137_part6.mp4 (taille: 10985761 octets)
+[2025-10-22 06:23:38] Amplification audio: ./record_back/back_sound_20251022_062137_part6.mp4 -> ./record_back/BOOST/back_sound_20251022_062137_part6_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:23:39] Amplification terminée: ./record_back/BOOST/back_sound_20251022_062137_part6_boost.mp4
+[2025-10-22 06:23:39] Fichier original supprimé: ./record_back/back_sound_20251022_062137_part6.mp4
+[2025-10-22 06:23:39] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_062137_part6.mp4
+[2025-10-22 06:23:39] Démarrage segment #7 -> ./record_back/back_sound_20251022_062339_part7.mp4 (durée: 120s)
+[2025-10-22 06:25:39] Arrêt de ffmpeg (PID: 54371)
+[2025-10-22 06:25:40] Segment enregistré: ./record_back/back_sound_20251022_062339_part7.mp4 (taille: 10302182 octets)
+[2025-10-22 06:25:41] Amplification audio: ./record_back/back_sound_20251022_062339_part7.mp4 -> ./record_back/BOOST/back_sound_20251022_062339_part7_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:25:41] Amplification terminée: ./record_back/BOOST/back_sound_20251022_062339_part7_boost.mp4
+[2025-10-22 06:25:41] Fichier original supprimé: ./record_back/back_sound_20251022_062339_part7.mp4
+[2025-10-22 06:25:41] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_062339_part7.mp4
+[2025-10-22 06:25:41] Démarrage segment #8 -> ./record_back/back_sound_20251022_062541_part8.mp4 (durée: 120s)
+[2025-10-22 06:27:42] Arrêt de ffmpeg (PID: 54629)
+[2025-10-22 06:27:43] Segment enregistré: ./record_back/back_sound_20251022_062541_part8.mp4 (taille: 10954626 octets)
+[2025-10-22 06:27:43] Amplification audio: ./record_back/back_sound_20251022_062541_part8.mp4 -> ./record_back/BOOST/back_sound_20251022_062541_part8_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:27:44] Amplification terminée: ./record_back/BOOST/back_sound_20251022_062541_part8_boost.mp4
+[2025-10-22 06:27:44] Fichier original supprimé: ./record_back/back_sound_20251022_062541_part8.mp4
+[2025-10-22 06:27:44] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_062541_part8.mp4
+[2025-10-22 06:27:44] Démarrage segment #9 -> ./record_back/back_sound_20251022_062744_part9.mp4 (durée: 120s)
+[2025-10-22 06:29:44] Arrêt de ffmpeg (PID: 54810)
+[2025-10-22 06:29:45] Segment enregistré: ./record_back/back_sound_20251022_062744_part9.mp4 (taille: 16135998 octets)
+[2025-10-22 06:29:45] Amplification audio: ./record_back/back_sound_20251022_062744_part9.mp4 -> ./record_back/BOOST/back_sound_20251022_062744_part9_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:29:46] Amplification terminée: ./record_back/BOOST/back_sound_20251022_062744_part9_boost.mp4
+[2025-10-22 06:29:46] Fichier original supprimé: ./record_back/back_sound_20251022_062744_part9.mp4
+[2025-10-22 06:29:46] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_062744_part9.mp4
+[2025-10-22 06:29:46] Démarrage segment #10 -> ./record_back/back_sound_20251022_062946_part10.mp4 (durée: 120s)
+[2025-10-22 06:31:46] Arrêt de ffmpeg (PID: 54999)
+[2025-10-22 06:31:47] Segment enregistré: ./record_back/back_sound_20251022_062946_part10.mp4 (taille: 17093399 octets)
+[2025-10-22 06:31:47] Amplification audio: ./record_back/back_sound_20251022_062946_part10.mp4 -> ./record_back/BOOST/back_sound_20251022_062946_part10_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:31:47] Amplification terminée: ./record_back/BOOST/back_sound_20251022_062946_part10_boost.mp4
+[2025-10-22 06:31:47] Fichier original supprimé: ./record_back/back_sound_20251022_062946_part10.mp4
+[2025-10-22 06:31:47] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_062946_part10.mp4
+[2025-10-22 06:31:47] Démarrage segment #11 -> ./record_back/back_sound_20251022_063147_part11.mp4 (durée: 120s)
+[2025-10-22 06:33:47] Arrêt de ffmpeg (PID: 55165)
+[2025-10-22 06:33:49] Segment enregistré: ./record_back/back_sound_20251022_063147_part11.mp4 (taille: 17472531 octets)
+[2025-10-22 06:33:49] Amplification audio: ./record_back/back_sound_20251022_063147_part11.mp4 -> ./record_back/BOOST/back_sound_20251022_063147_part11_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:33:49] Amplification terminée: ./record_back/BOOST/back_sound_20251022_063147_part11_boost.mp4
+[2025-10-22 06:33:49] Fichier original supprimé: ./record_back/back_sound_20251022_063147_part11.mp4
+[2025-10-22 06:33:49] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_063147_part11.mp4
+[2025-10-22 06:33:49] Démarrage segment #12 -> ./record_back/back_sound_20251022_063349_part12.mp4 (durée: 120s)
+[2025-10-22 06:35:49] Arrêt de ffmpeg (PID: 55346)
+[2025-10-22 06:35:50] Segment enregistré: ./record_back/back_sound_20251022_063349_part12.mp4 (taille: 13694843 octets)
+[2025-10-22 06:35:50] Amplification audio: ./record_back/back_sound_20251022_063349_part12.mp4 -> ./record_back/BOOST/back_sound_20251022_063349_part12_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:35:51] Amplification terminée: ./record_back/BOOST/back_sound_20251022_063349_part12_boost.mp4
+[2025-10-22 06:35:51] Fichier original supprimé: ./record_back/back_sound_20251022_063349_part12.mp4
+[2025-10-22 06:35:51] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_063349_part12.mp4
+[2025-10-22 06:35:51] Démarrage segment #13 -> ./record_back/back_sound_20251022_063551_part13.mp4 (durée: 120s)
+[2025-10-22 06:37:51] Arrêt de ffmpeg (PID: 55531)
+[2025-10-22 06:37:52] Segment enregistré: ./record_back/back_sound_20251022_063551_part13.mp4 (taille: 14895075 octets)
+[2025-10-22 06:37:52] Amplification audio: ./record_back/back_sound_20251022_063551_part13.mp4 -> ./record_back/BOOST/back_sound_20251022_063551_part13_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:37:53] Amplification terminée: ./record_back/BOOST/back_sound_20251022_063551_part13_boost.mp4
+[2025-10-22 06:37:53] Fichier original supprimé: ./record_back/back_sound_20251022_063551_part13.mp4
+[2025-10-22 06:37:53] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_063551_part13.mp4
+[2025-10-22 06:37:53] Démarrage segment #14 -> ./record_back/back_sound_20251022_063753_part14.mp4 (durée: 120s)
+[2025-10-22 06:39:53] Arrêt de ffmpeg (PID: 55715)
+[2025-10-22 06:39:54] Segment enregistré: ./record_back/back_sound_20251022_063753_part14.mp4 (taille: 15069333 octets)
+[2025-10-22 06:39:54] Amplification audio: ./record_back/back_sound_20251022_063753_part14.mp4 -> ./record_back/BOOST/back_sound_20251022_063753_part14_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:39:55] Amplification terminée: ./record_back/BOOST/back_sound_20251022_063753_part14_boost.mp4
+[2025-10-22 06:39:55] Fichier original supprimé: ./record_back/back_sound_20251022_063753_part14.mp4
+[2025-10-22 06:39:55] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_063753_part14.mp4
+[2025-10-22 06:39:55] Démarrage segment #15 -> ./record_back/back_sound_20251022_063955_part15.mp4 (durée: 120s)
+[2025-10-22 06:41:55] Arrêt de ffmpeg (PID: 55945)
+[2025-10-22 06:41:56] Segment enregistré: ./record_back/back_sound_20251022_063955_part15.mp4 (taille: 17038590 octets)
+[2025-10-22 06:41:56] Amplification audio: ./record_back/back_sound_20251022_063955_part15.mp4 -> ./record_back/BOOST/back_sound_20251022_063955_part15_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:41:57] Amplification terminée: ./record_back/BOOST/back_sound_20251022_063955_part15_boost.mp4
+[2025-10-22 06:41:57] Fichier original supprimé: ./record_back/back_sound_20251022_063955_part15.mp4
+[2025-10-22 06:41:57] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_063955_part15.mp4
+[2025-10-22 06:41:57] Démarrage segment #16 -> ./record_back/back_sound_20251022_064157_part16.mp4 (durée: 120s)
+[2025-10-22 06:43:57] Arrêt de ffmpeg (PID: 56178)
+[2025-10-22 06:43:58] Segment enregistré: ./record_back/back_sound_20251022_064157_part16.mp4 (taille: 13739400 octets)
+[2025-10-22 06:43:58] Amplification audio: ./record_back/back_sound_20251022_064157_part16.mp4 -> ./record_back/BOOST/back_sound_20251022_064157_part16_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:43:59] Amplification terminée: ./record_back/BOOST/back_sound_20251022_064157_part16_boost.mp4
+[2025-10-22 06:43:59] Fichier original supprimé: ./record_back/back_sound_20251022_064157_part16.mp4
+[2025-10-22 06:43:59] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_064157_part16.mp4
+[2025-10-22 06:43:59] Démarrage segment #17 -> ./record_back/back_sound_20251022_064359_part17.mp4 (durée: 120s)
+[2025-10-22 06:45:59] Arrêt de ffmpeg (PID: 56358)
+[2025-10-22 06:46:00] Segment enregistré: ./record_back/back_sound_20251022_064359_part17.mp4 (taille: 16447144 octets)
+[2025-10-22 06:46:00] Amplification audio: ./record_back/back_sound_20251022_064359_part17.mp4 -> ./record_back/BOOST/back_sound_20251022_064359_part17_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:46:01] Amplification terminée: ./record_back/BOOST/back_sound_20251022_064359_part17_boost.mp4
+[2025-10-22 06:46:01] Fichier original supprimé: ./record_back/back_sound_20251022_064359_part17.mp4
+[2025-10-22 06:46:01] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_064359_part17.mp4
+[2025-10-22 06:46:01] Démarrage segment #18 -> ./record_back/back_sound_20251022_064601_part18.mp4 (durée: 120s)
+[2025-10-22 06:48:01] Arrêt de ffmpeg (PID: 56553)
+[2025-10-22 06:48:02] Segment enregistré: ./record_back/back_sound_20251022_064601_part18.mp4 (taille: 15548062 octets)
+[2025-10-22 06:48:02] Amplification audio: ./record_back/back_sound_20251022_064601_part18.mp4 -> ./record_back/BOOST/back_sound_20251022_064601_part18_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:48:02] Amplification terminée: ./record_back/BOOST/back_sound_20251022_064601_part18_boost.mp4
+[2025-10-22 06:48:02] Fichier original supprimé: ./record_back/back_sound_20251022_064601_part18.mp4
+[2025-10-22 06:48:02] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_064601_part18.mp4
+[2025-10-22 06:48:02] Démarrage segment #19 -> ./record_back/back_sound_20251022_064802_part19.mp4 (durée: 120s)
+[2025-10-22 06:50:02] Arrêt de ffmpeg (PID: 56740)
+[2025-10-22 06:50:04] Segment enregistré: ./record_back/back_sound_20251022_064802_part19.mp4 (taille: 9618577 octets)
+[2025-10-22 06:50:04] Amplification audio: ./record_back/back_sound_20251022_064802_part19.mp4 -> ./record_back/BOOST/back_sound_20251022_064802_part19_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:50:05] Amplification terminée: ./record_back/BOOST/back_sound_20251022_064802_part19_boost.mp4
+[2025-10-22 06:50:05] Fichier original supprimé: ./record_back/back_sound_20251022_064802_part19.mp4
+[2025-10-22 06:50:05] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_064802_part19.mp4
+[2025-10-22 06:50:05] Démarrage segment #20 -> ./record_back/back_sound_20251022_065005_part20.mp4 (durée: 120s)
+[2025-10-22 06:52:05] Arrêt de ffmpeg (PID: 56931)
+[2025-10-22 06:52:06] Segment enregistré: ./record_back/back_sound_20251022_065005_part20.mp4 (taille: 10835507 octets)
+[2025-10-22 06:52:06] Amplification audio: ./record_back/back_sound_20251022_065005_part20.mp4 -> ./record_back/BOOST/back_sound_20251022_065005_part20_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:52:07] Amplification terminée: ./record_back/BOOST/back_sound_20251022_065005_part20_boost.mp4
+[2025-10-22 06:52:07] Fichier original supprimé: ./record_back/back_sound_20251022_065005_part20.mp4
+[2025-10-22 06:52:07] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_065005_part20.mp4
+[2025-10-22 06:52:07] Démarrage segment #21 -> ./record_back/back_sound_20251022_065207_part21.mp4 (durée: 120s)
+[2025-10-22 06:54:07] Arrêt de ffmpeg (PID: 57145)
+[2025-10-22 06:54:08] Segment enregistré: ./record_back/back_sound_20251022_065207_part21.mp4 (taille: 5149776 octets)
+[2025-10-22 06:54:08] Amplification audio: ./record_back/back_sound_20251022_065207_part21.mp4 -> ./record_back/BOOST/back_sound_20251022_065207_part21_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:54:08] Amplification terminée: ./record_back/BOOST/back_sound_20251022_065207_part21_boost.mp4
+[2025-10-22 06:54:08] Fichier original supprimé: ./record_back/back_sound_20251022_065207_part21.mp4
+[2025-10-22 06:54:08] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_065207_part21.mp4
+[2025-10-22 06:54:08] Démarrage segment #22 -> ./record_back/back_sound_20251022_065408_part22.mp4 (durée: 120s)
+[2025-10-22 06:56:08] Arrêt de ffmpeg (PID: 57627)
+[2025-10-22 06:56:09] Segment enregistré: ./record_back/back_sound_20251022_065408_part22.mp4 (taille: 7848636 octets)
+[2025-10-22 06:56:09] Amplification audio: ./record_back/back_sound_20251022_065408_part22.mp4 -> ./record_back/BOOST/back_sound_20251022_065408_part22_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:56:10] Amplification terminée: ./record_back/BOOST/back_sound_20251022_065408_part22_boost.mp4
+[2025-10-22 06:56:10] Fichier original supprimé: ./record_back/back_sound_20251022_065408_part22.mp4
+[2025-10-22 06:56:10] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_065408_part22.mp4
+[2025-10-22 06:56:10] Démarrage segment #23 -> ./record_back/back_sound_20251022_065610_part23.mp4 (durée: 120s)
+[2025-10-22 06:58:10] Arrêt de ffmpeg (PID: 57897)
+[2025-10-22 06:58:11] Segment enregistré: ./record_back/back_sound_20251022_065610_part23.mp4 (taille: 6324274 octets)
+[2025-10-22 06:58:11] Amplification audio: ./record_back/back_sound_20251022_065610_part23.mp4 -> ./record_back/BOOST/back_sound_20251022_065610_part23_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 06:58:12] Amplification terminée: ./record_back/BOOST/back_sound_20251022_065610_part23_boost.mp4
+[2025-10-22 06:58:12] Fichier original supprimé: ./record_back/back_sound_20251022_065610_part23.mp4
+[2025-10-22 06:58:12] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_065610_part23.mp4
+[2025-10-22 06:58:12] Démarrage segment #24 -> ./record_back/back_sound_20251022_065812_part24.mp4 (durée: 120s)
+[2025-10-22 07:00:12] Arrêt de ffmpeg (PID: 58164)
+[2025-10-22 07:00:13] Segment enregistré: ./record_back/back_sound_20251022_065812_part24.mp4 (taille: 3741181 octets)
+[2025-10-22 07:00:13] Amplification audio: ./record_back/back_sound_20251022_065812_part24.mp4 -> ./record_back/BOOST/back_sound_20251022_065812_part24_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 07:00:13] Amplification terminée: ./record_back/BOOST/back_sound_20251022_065812_part24_boost.mp4
+[2025-10-22 07:00:13] Fichier original supprimé: ./record_back/back_sound_20251022_065812_part24.mp4
+[2025-10-22 07:00:13] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_065812_part24.mp4
+[2025-10-22 07:00:13] Démarrage segment #25 -> ./record_back/back_sound_20251022_070013_part25.mp4 (durée: 120s)
+[2025-10-22 07:02:13] Arrêt de ffmpeg (PID: 58416)
+[2025-10-22 07:02:15] Segment enregistré: ./record_back/back_sound_20251022_070013_part25.mp4 (taille: 4372765 octets)
+[2025-10-22 07:02:15] Amplification audio: ./record_back/back_sound_20251022_070013_part25.mp4 -> ./record_back/BOOST/back_sound_20251022_070013_part25_boost.mp4 (filtre: highpass=300,lowpass=3000,compand=0|0:1|1:-90/-60|-60/-40|-40/-30|-20/-20:6,volume=2.0)
+[2025-10-22 07:02:15] Amplification terminée: ./record_back/BOOST/back_sound_20251022_070013_part25_boost.mp4
+[2025-10-22 07:02:15] Fichier original supprimé: ./record_back/back_sound_20251022_070013_part25.mp4
+[2025-10-22 07:02:15] Fichier original retiré de la liste des fichiers générés: ./record_back/back_sound_20251022_070013_part25.mp4
+[2025-10-22 07:02:15] Démarrage segment #26 -> ./record_back/back_sound_20251022_070215_part26.mp4 (durée: 120s)
+[2025-10-22 07:04:05] SIGINT reçu: arrêt en cours...
+[2025-10-22 07:04:05] Arrêt de ffmpeg (PID: 58636)
+[2025-10-22 07:04:06] Restauration du volume original à 109%
+[2025-10-22 07:04:06] Restauration du volume original à 109%

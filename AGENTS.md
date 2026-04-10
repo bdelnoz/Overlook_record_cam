@@ -51,6 +51,29 @@ Date : 2026-03-28 01:35
 
 ## Language and communication rules
 
+
+### Audit report dual-language exception (mandatory)
+
+- When the user explicitly requests an audit of a repository, the agent MUST generate two audit report files:
+
+  - `AUDIT_REPORT.md` → English version (default repository language)
+  - `AUDIT_REPORT_FR.md` → French version (strict translation of the English version)
+
+- This rule is a controlled exception to the default requirement that all repository artifacts MUST be written in English.
+
+- The French version MUST be:
+  - a faithful and complete translation of the English report
+  - strictly aligned in structure, sections, and content
+  - intended only for readability and accessibility
+
+- No additional interpretation, summarization, or divergence is allowed between the two versions.
+
+- Both files MUST be produced in the same task, at the same time.
+
+- This rule applies ONLY when an audit is explicitly requested by the user.
+- For all other artifacts, the default English-only rule remains unchanged.
+
+
 - Interactive chat exchanges with the user MUST be written in French by default.
 - Any AI agent working in this repository MUST reply to the user in French in direct chat interactions, unless the user explicitly requests another language for the conversation.
 - All repository deliverables and artifacts MUST be written in English by default.

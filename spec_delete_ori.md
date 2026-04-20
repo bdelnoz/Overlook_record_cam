@@ -1,30 +1,36 @@
-# Spécifications – Option `--delete-ori` pour `record_cam.sh`
+<!--
+Document : spec_delete_ori.md
+Auteur : Bruno DELNOZ
+Email : bruno.delnoz@protonmail.com
+Version : v1.1.0
+Date : 2026-04-20 00:00
+-->
+# Specification Note - `--delete-ori` Option
 
-## Objectif
-Ajouter une option `--delete-ori` permettant la suppression automatique du fichier MP4 original après qu’un boost audio ait été appliqué et que le fichier résultant ait été correctement sauvegardé.
+## Objective
 
-## Description
-- L’option `--delete-ori` est un argument en ligne de commande.  
-- Si spécifiée, le script supprime le fichier MP4 original uniquement après que le boost audio ait produit un fichier de sortie valide.  
-- Si non spécifiée, le comportement actuel est conservé : le fichier original est préservé.
+This document preserves the design intent of adding `--delete-ori` to remove the original MP4 only after a valid boosted output is confirmed.
 
-## Fonctionnement attendu
-1. Le boost audio s’exécute normalement (création du fichier `*_boost.mp4`).  
-2. Vérification que le fichier boosté existe et est lisible.  
-3. Si `--delete-ori` est activé, le script supprime le fichier MP4 original.  
-4. Si l’option n’est pas activée, le fichier original reste inchangé.  
+## Repository status
 
-## Exemple d’utilisation
-\`\`\`bash
-./record_cam.sh --volume --delete-ori
-\`\`\`
-→ Boost audio du fichier généré et suppression automatique du MP4 original après validation.
+- The lightweight script `record_cam_v3.2.sh` includes `--delete-ori`.
+- The main operational script `record_cam.sh` does **not** expose `--delete-ori` as a CLI argument.
+- In `record_cam.sh`, original segment deletion is already embedded in `boost_audio()` after successful boost output generation.
 
-## Mise à jour de l’aide
-Dans `--help`, ajouter :
-\`\`\`
-  --delete-ori       Supprime le fichier MP4 original après boost audio
-\`\`\`
+## Behavior in `record_cam_v3.2.sh`
 
-## Changelog
-- **v3.2** : Ajout de l’option `--delete-ori` permettant la suppression du fichier original après boost audio.
+1. `--volume` triggers audio boost for `output.mp4`.
+2. Boosted file is written under `./boost/`.
+3. `ffprobe` verifies output stream validity.
+4. If `--delete-ori` is enabled and verification succeeds, original MP4 is deleted.
+5. If verification fails, original file is retained.
+
+## Usage example (`record_cam_v3.2.sh`)
+
+```bash
+./record_cam_v3.2.sh --volume --delete-ori
+```
+
+## Consistency note
+
+For users operating `record_cam.sh`, deletion semantics are tied to successful boost processing without a dedicated `--delete-ori` flag.

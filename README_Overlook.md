@@ -1,55 +1,61 @@
-# Overlook
+<!--
+Document : README_Overlook.md
+Auteur : Bruno DELNOZ
+Email : bruno.delnoz@protonmail.com
+Version : v1.1.0
+Date : 2026-04-20 00:00
+-->
+# Overlook - Operator Guide
 
-## 🎥 Présentation
+## Purpose
 
-**Overlook** est un outil d’enregistrement automatisé basé sur `FFmpeg`, conçu pour capturer en continu l’écran ou un flux vidéo.  
-Il segmente les enregistrements, ajuste le volume, et assure un fonctionnement en boucle stable, avec journalisation intégrée.
+Overlook provides continuous screen-and-audio capture workflows for incident review and retrospective analysis.
 
-## 🚀 Fonctionnalités principales
+In this repository, the operational script is `record_cam.sh`, with historical variants (`record_cam.v3.0.sh`, `record_cam.LAST.sh`, `record_cam_v3.2.sh`) kept for comparison or fallback.
 
-- Capture de l’écran avec `FFmpeg`
-- Bouclage automatique des sessions d’enregistrement
-- Augmentation configurable du volume (`+2dB`, `+4dB`, etc.)
-- Sauvegarde automatique des fichiers `.mp4`
-- Gestion des erreurs et logs détaillés
-- Mode silencieux ou verbeux selon les besoins
+## What is recorded
 
-## ⚙️ Installation
+- Desktop video stream from X11 display (`:0.0`).
+- System audio monitor source.
+- Optional microphone source mixed with system audio.
+- Optional motion snapshots (diff loop) in parallel.
 
-```bash
-git clone https://github.com/votre-nom/Overlook.git
-cd Overlook
-chmod +x overlook.sh
-```
+## Main operational features
 
-## 🧩 Utilisation
+- Timed segmentation of MP4 output.
+- Optional total-duration stop.
+- Optional output mute during recording (`--mute-output`) without impacting capture.
+- Automatic post-processing of segments into `BOOST/` output files.
+- Optional movement evidence images with highlighted bounding area.
+- Safe delete/restore workflow with automatic backup foldering.
 
-```bash
-./overlook.sh --duree 600 --volume +4 --output /chemin/de/sortie
-```
-
-| Argument | Description |
-|-----------|--------------|
-| `--duree` | Durée d’une capture en secondes |
-| `--volume` | Gain audio appliqué (ex: +4 pour +4dB) |
-| `--output` | Dossier de destination des vidéos |
-| `--verbose` | Active le mode verbeux |
-
-## 🧠 Exemple concret
+## Typical usage patterns
 
 ```bash
-./overlook.sh --duree 900 --volume +6 --output ~/Videos/overlook
+# 35-minute segments, unlimited duration
+./record_cam.sh Patrol
+
+# 2-hour run with 15-minute segments
+./record_cam.sh 7200 Patrol --segment-duration 900
+
+# Motion analysis only
+./record_cam.sh --diff --diff-target-dir ./diff_output --diff-duration 1800
+
+# Combined recording + motion detection
+./record_cam.sh 3600 Patrol --diff --diff-interval 3 --diff-threshold 8
 ```
 
-Enregistre des sessions de 15 minutes avec un volume amplifié de +6dB.
+## Output conventions
 
-## 🧾 Licence
+- Video segments: `<base>_<timestamp>_part<index>.mp4`
+- Post-processed audio/video: `TARGET_DIR/BOOST/*_boost.mp4`
+- Motion captures: `capture_<timestamp>_<index>.png`
+- Motion alerts: `MOVEMENT_<timestamp>_<counter>.jpg`
+- Log file: `<script_basename>.v3.0.log` for current `record_cam.sh`
 
-Ce projet est distribué sous licence MIT.
+## Operational recommendations
 
----
-
-**Auteur :** Bruno Delnoz  
-**Version :** 3.0.1  
-**Nom de code :** Overlook  
-**Description :** Capture visuelle continue avec gestion du son et bouclage automatique.
+- Run `./record_cam.sh --prerequis` before first production execution.
+- Validate the PulseAudio monitor source with `--discover-devices` when audio capture is missing.
+- Use dedicated `--target_dir` for long sessions to prevent mixed outputs.
+- Prefer explicit `--diff-target-dir` when running multiple detection sessions.

@@ -1,120 +1,58 @@
-**Spécifications Complètes pour Record Cam Script Version 2.x**
+<!--
+Document : Specification record_cam.sh v2.4 avec --diff argument.md
+Auteur : Bruno DELNOZ
+Email : bruno.delnoz@protonmail.com
+Version : v1.1.0
+Date : 2026-04-20 00:00
+-->
+# Specification Alignment Note - `record_cam.sh` Diff Features
 
----
+## Scope
 
-## 1. Pré-requis
+This document updates the historical v2.4 specification to align with the currently present implementation in `record_cam.sh` (script header version `v3.0.1`).
 
-* `ffmpeg` : capture audio/vidéo
-* `xdpyinfo` : obtenir la résolution de l'écran (installable via `sudo apt-get install xdpyinfo`)
-* `ImageMagick` (`compare`) : détection des différences d'images (installable via `sudo apt-get install imagemagick`)
-* `bash` : interpréteur du script
+## Effective prerequisites
 
-> L'option `--prerequis` permet de vérifier tous ces prérequis avant exécution.
+- `ffmpeg`
+- `xdpyinfo` (`x11-utils`)
+- `ImageMagick` commands (`compare`, `identify`, `convert`, `import`) when `--diff` is used
+- `pulseaudio-utils` (`pactl`) when `--mute-output` is used
+- `bc` optional for floating-point threshold checks
 
----
+`--prerequis` runs prerequisite checks and can be combined with `--install` for automatic package installation.
 
-## 2. Nouveaux Arguments pour Diff/Mouvement
+## Effective diff/motion arguments
 
-| Argument            | Description                                                         | Valeur par défaut                                                    |
-| ------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `--diff`            | Active la détection de mouvement sur la capture d'écran             | Inactif                                                              |
-| `--diff-target-dir` | Répertoire où seront stockées les images de diff                    | `./diff_output`                                                      |
-| `--diff-duration`   | Durée d'activité de la détection (indépendante de la capture vidéo) | 0 (ad vitam aeternam)                                                |
-| `--diff-interval`   | Intervalle entre captures d'images pour diff                        | 3 (secondes)                                                         |
-| `--diff-threshold`  | Seuil de différence (%) pour considérer un mouvement                | 5                                                                    |
-| `--diff-record-all` | Enregistre toutes les images de diff générées                       | Faux (conserver seulement les images finales avec carré fluorescent) |
+| Argument | Current behavior | Default |
+| --- | --- | --- |
+| `--diff` | Enables motion detection loop in parallel (or standalone if no base name is provided). | Off |
+| `--diff-target-dir DIR` | Directory for screenshots and movement-marked images. | `./diff_output` |
+| `--diff-duration SEC` | Detection activity duration (`0` means unlimited). | `0` |
+| `--diff-interval SEC` | Delay between screenshot captures. | `3` |
+| `--diff-threshold PCT` | Movement detection threshold percentage. | `5` |
+| `--diff-record-all` | Keeps all captures, not only movement-positive ones. | Off |
 
----
+## Runtime behavior summary
 
-## 3. Fonctionnement
+1. Optional prerequisite check is executed (`--prerequis`) and is always re-checked before operational run.
+2. Screen is captured periodically for diff analysis.
+3. Consecutive screenshots are compared with ImageMagick metrics.
+4. When threshold is met, a marked JPEG (`MOVEMENT_*.jpg`) is generated.
+5. Depending on `--diff-record-all`, non-event captures may be removed.
+6. Detection can run with video capture or as standalone mode (`./record_cam.sh --diff ...`).
 
-1. Vérification des prérequis si `--prerequis` est actif.
-2. Capture vidéo normale inchangée.
-3. Si `--diff` est actif :
+## Additional system options active in current script
 
-   * Capture d'images à l'intervalle défini.
-   * Comparaison des images consécutives avec `compare` d'ImageMagick.
-   * Détection des mouvements selon le seuil (`--diff-threshold`).
-   * Création d'image JPEG avec carré fluorescent sur mouvement détecté.
-   * Stockage automatique dans le répertoire défini par `--diff-target-dir`.
-   * Durée limitée par `--diff-duration`, 0 pour illimité.
+- `--help`
+- `--changelog`
+- `--discover-devices`
+- `--exec`
+- `--simulate` (expects a following value; `true` enables simulation in current parser)
+- `--delete` / `--remove`
+- `--undelete`
+- `--target_dir`
 
-> Les fonctions existantes de capture vidéo, son, segments, boosting restent inchangées.
+## Version context
 
----
-
-## 4. Changelog
-
-* **v1.0 - v2.0** : Fonctionnalités de capture vidéo et son.
-* **v2.1** : Ajout segmentation vidéo.
-* **v2.2** : Ajout options de log et boost du son.
-* **v2.3** : Ajout `--diff` initial, capture d'images et carré fluorescent.
-* **v2.4** : Ajout `--diff-target-dir`, `--diff-delay`, et `--diff-record-all`.
-* **v2.5 / 2.x actuel** : Ajout `--diff-duration`, `--diff-interval`, `--diff-threshold`, vérification prérequis intégrée.
-
----
-
-## 5. Exemples
-
-### 5.1 Exemples existants (capture seule)
-
-```bash
-./record_cam.sh -duration 7200 -segment 300 -muteoutput
-```
-
-### 5.2 Exemples nouveaux (diff seule)
-
-```bash
-./record_cam.sh --diff --diff-duration 3600 --diff-interval 3 --diff-target-dir ./diff_output
-```
-
-### 5.3 Exemples combinés (capture vidéo + diff)
-
-```bash
-./record_cam.sh -duration 7200 -segment 300 --diff --diff-duration 3600 --diff-interval 3 --diff-target-dir ./diff_output
-```
-
-### 5.4 Exemples avec options supplémentaires
-
-```bash
-./record_cam.sh -duration 7200 -segment 300 -boost 5 --diff --diff-duration 7200 --diff-interval 5 --diff-threshold 10 --diff-target-dir ./diff_output
-```
-
----
-
-## 6. Notes importantes
-
-* `--diff-duration` est indépendant de la durée principale de capture.
-* `--diff-interval` définit la fréquence de capture pour la détection de mouvement.
-* `--diff-record-all` permet de conserver toutes les images intermédiaires ou seulement les images finales avec carré fluorescent.
-* Les logs sont toujours actifs et stockés dans le répertoire d'exécution du script.
-* Les arguments existants pour capture vidéo restent inchangés.
-* `--prerequis` vérifie automatiquement l'installation des outils nécessaires.
-
----
-
-
-
-
-Changelog
-
-v1.0 à v1.9 : historique complet inchangé.
-
-v2.0 à v2.2 : ajout progressif de --diff et ses fonctionnalités.
-
-v2.3 :
-
-Intégration finale des arguments --diff, --diff_delay, --diff_target_dir, --diff_interval, --diff_threshold, --diff_record_all_images.
-
-Détection en parallèle avec l’enregistrement vidéo.
-
-Capture et marquage des mouvements avec carré fluorescent.
-
-Logging permanent dans le répertoire d’exécution ou de détection.
-
-Pré-requis clairement listés et vérifiés.
-
---help mis à jour avec tous les exemples.
-
-
-**Fin des Spécifications Version 2.x**
+- Historical v2.x document intent: diff feature introduction and progression.
+- Current repository implementation: advanced v3.x branch with refined arithmetic handling for diff calculations and expanded system options.

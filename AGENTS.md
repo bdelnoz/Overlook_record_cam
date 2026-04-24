@@ -2,8 +2,8 @@
 Document : AGENTS.md
 Author : Bruno DELNOZ
 Email : bruno.delnoz@protonmail.com
-Version : v4.0.0
-Date : 2026-04-13 00:11
+Version : v4.1.0
+Date : 2026-04-24 22:30
 -->
 # AGENTS.md
 
@@ -157,6 +157,29 @@ Date : 2026-04-13 00:11
 - The agent MUST NOT bypass this section by treating a request as a minor change, obvious change, quick fix, implicit change, cosmetic refactor, or direct coding request.
 - Even if the user asks to code immediately, the agent MUST still pass through the specification workflow defined in this section before implementation, unless the user explicitly states that no repository change is requested and only a conceptual discussion is needed.
 
+### 0.13 Mandatory `SPECIFICATIONS_FR.md` companion file
+
+- A file named exactly `./SPECIFICATIONS_FR.md` MUST exist at the repository root whenever `./SPECIFICATIONS.md` exists.
+- Every operation that creates, updates, rewrites, validates, synchronizes, versions, or otherwise modifies `./SPECIFICATIONS.md` MUST also create or update `./SPECIFICATIONS_FR.md` in the same task.
+- `./SPECIFICATIONS_FR.md` is the mandatory French companion version of `./SPECIFICATIONS.md`.
+- `./SPECIFICATIONS_FR.md` MUST contain the same validated specifications, structure, version, date, time, changelog history, acceptance criteria, constraints, and repository-specific operational meaning as `./SPECIFICATIONS.md`, translated into French.
+- The agent MUST NOT treat `./SPECIFICATIONS_FR.md` as a summary, shortened translation, partial translation, appendix, or optional convenience file.
+- The agent MUST preserve the same specification version number in both files for the same approved specification state.
+- The agent MUST update both files atomically within the same task so that neither file is stale compared with the other.
+- The task is not complete if `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md` are not synchronized.
+- The task is not complete if `./SPECIFICATIONS.md` exists but `./SPECIFICATIONS_FR.md` does not exist.
+- The task is not complete if `./SPECIFICATIONS_FR.md` exists but does not reflect the latest approved `./SPECIFICATIONS.md` content.
+- When the specification-first workflow requires presenting the FULL updated specifications to the user, the agent MUST present the complete updated English specification and the complete updated French companion specification before implementation, unless the user explicitly requests only one language for review.
+- After explicit user approval, the mandatory update order is:
+  1. create or update `./SPECIFICATIONS.md` with the approved English specifications
+  2. create or update `./SPECIFICATIONS_FR.md` with the approved French companion specifications
+  3. verify that both files share the same version, date, time, changelog state, and specification meaning
+  4. only after that, implement code and related repository changes
+- `./SPECIFICATIONS_FR.md` MUST follow the same Markdown metadata block rules as `./SPECIFICATIONS.md`, with `Document : SPECIFICATIONS_FR.md`.
+- `./SPECIFICATIONS_FR.md` MUST include an internal detailed changelog, append-only, preserving the complete history of all French specification versions.
+- If `./SPECIFICATIONS.md` is initialized from current repository state, `./SPECIFICATIONS_FR.md` MUST be initialized from the same repository state in French during the same operation.
+- If `./SPECIFICATIONS.md` is changed due to an approved behavior change, `./SPECIFICATIONS_FR.md` MUST be changed during the same operation for the same approved behavior change.
+
 
 
 
@@ -211,6 +234,7 @@ Date : 2026-04-13 00:11
 - Any AI agent working in this repository MUST reply to the user in French in direct chat interactions, unless the user explicitly requests another language for the conversation.
 - All repository deliverables and artifacts MUST be written in English by default.
 - This includes, but is not limited to: source code deliverables, Markdown files, documentation files, README files, CHANGELOG files, INSTALL files, WHY files, comments intended for repository maintainers, commit messages, pull request titles, and pull request descriptions.
+- Exception: `./SPECIFICATIONS_FR.md` MUST be written in French and synchronized with `./SPECIFICATIONS.md` as defined in section `0.13`.
 - Do not apply chat-language rules to repository files or repository deliverables.
 - Only switch repository deliverables or artifacts to French if the user explicitly requests French for those deliverables.
 - Technical terms, code, commands, logs, error messages, protocol names, API names, commit labels, and standard engineering vocabulary may remain in English when appropriate.

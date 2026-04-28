@@ -2,8 +2,8 @@
 Document : AGENTS.md
 Author : Bruno DELNOZ
 Email : bruno.delnoz@protonmail.com
-Version : v4.1.0
-Date : 2026-04-24 22:30
+Version : v4.5.0
+Date : 2026-04-26 18:02
 -->
 # AGENTS.md
 
@@ -180,6 +180,62 @@ Date : 2026-04-24 22:30
 - If `./SPECIFICATIONS.md` is initialized from current repository state, `./SPECIFICATIONS_FR.md` MUST be initialized from the same repository state in French during the same operation.
 - If `./SPECIFICATIONS.md` is changed due to an approved behavior change, `./SPECIFICATIONS_FR.md` MUST be changed during the same operation for the same approved behavior change.
 
+### 0.14 Mandatory `SPECIFICATIONS_GLOBAL.md` repository baseline file
+
+- A file named exactly `./SPECIFICATIONS_GLOBAL.md` MUST exist at the repository root.
+- `./SPECIFICATIONS_GLOBAL.md` is the mandatory global, repository-wide, persistent specification baseline.
+- `./SPECIFICATIONS_GLOBAL.md` MUST describe the stable repository-level purpose, architecture, constraints, files, commands, configuration, conventions, safety rules, validation rules, and long-term expected behavior that are not limited to the current Codex task.
+- `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md` are mandatory task-scoped specification files for the current Codex operation and its French companion version.
+- `./SPECIFICATIONS_GLOBAL.md` MUST NOT be treated as a replacement for `./SPECIFICATIONS.md` or `./SPECIFICATIONS_FR.md`.
+- `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md` MUST NOT be treated as replacements for `./SPECIFICATIONS_GLOBAL.md`.
+- If `./SPECIFICATIONS_GLOBAL.md` does not exist, the agent MUST create it before any code implementation starts.
+- The initial `./SPECIFICATIONS_GLOBAL.md` MUST be built from the current repository state only.
+- The agent MUST NOT invent unsupported global specifications.
+- The agent MUST clearly distinguish in `./SPECIFICATIONS_GLOBAL.md`:
+  - verified stable repository behavior derived from the repository
+  - global repository constraints and conventions
+  - current task-specific requirements that must remain only in `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md`
+  - open global points still awaiting user validation when applicable
+- Any approved change that modifies stable repository-wide behavior, architecture, interfaces, file layout, commands, configuration, constraints, safety model, validation rules, or long-term expected behavior MUST update `./SPECIFICATIONS_GLOBAL.md` in the same task.
+- Any approved change that is limited to the current Codex task MUST update `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md` but MUST NOT be promoted into `./SPECIFICATIONS_GLOBAL.md` unless it also changes the stable global repository baseline.
+- `./SPECIFICATIONS_GLOBAL.md` MUST be versioned.
+- `./SPECIFICATIONS_GLOBAL.md` MUST start with the repository standard Markdown metadata block, with `Document : SPECIFICATIONS_GLOBAL.md`.
+- `./SPECIFICATIONS_GLOBAL.md` MUST include at minimum:
+  - document name
+  - author
+  - email
+  - version
+  - exact date and time
+- `./SPECIFICATIONS_GLOBAL.md` MUST contain an internal detailed changelog inside the file.
+- The `./SPECIFICATIONS_GLOBAL.md` changelog MUST be append-only and MUST preserve the complete history of all global specification versions.
+- `./SPECIFICATIONS_GLOBAL.md` MUST contain a structured global specification view of the repository.
+- Unless the user explicitly asks for a stricter structure, it MUST contain at least these sections:
+  - Purpose
+  - Global scope
+  - Stable verified repository behavior
+  - Repository architecture
+  - Global functional requirements
+  - Global non-functional requirements
+  - Global inputs
+  - Global outputs
+  - Global files and directories
+  - Global interfaces and commands
+  - Global constraints and safety rules
+  - Global validation and acceptance criteria
+  - Task-scoped specification boundary
+  - Out-of-scope items
+  - Changelog
+- When the specification-first workflow requires presenting the FULL updated specifications to the user, the agent MUST also present the complete updated `SPECIFICATIONS_GLOBAL.md` proposal if the requested change affects the global repository baseline.
+- After explicit user approval, the mandatory update order is:
+  1. create or update `./SPECIFICATIONS_GLOBAL.md` when the approved change affects the global repository baseline
+  2. create or update `./SPECIFICATIONS.md` with the approved English task-scoped specifications
+  3. create or update `./SPECIFICATIONS_FR.md` with the approved French companion task-scoped specifications
+  4. verify that global and task-scoped specifications are consistent but not conflated
+  5. only after that, implement code and related repository changes
+- The task is not complete if a global repository-baseline change was implemented but not recorded in `./SPECIFICATIONS_GLOBAL.md`.
+- The task is not complete if a current task-scoped change was incorrectly recorded only in `./SPECIFICATIONS_GLOBAL.md` and not in `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md`.
+- The task is not complete if `./SPECIFICATIONS_GLOBAL.md`, `./SPECIFICATIONS.md`, and `./SPECIFICATIONS_FR.md` contradict each other.
+
 
 
 
@@ -227,6 +283,40 @@ Date : 2026-04-24 22:30
 - Do not reinterpret these repository rules.
 - Apply these repository rules as written.
 - Do not request, require, or depend on any external rule file when this `AGENTS.md` is present.
+
+### 2.1 `AGENTS.md` immutability rule
+
+- `./AGENTS.md` is a repository governance file, not a normal task deliverable.
+- The agent MUST NOT modify, rewrite, reformat, normalize, rename, delete, move, regenerate, version-bump, or otherwise alter `./AGENTS.md` during repository work unless the user explicitly requests an `AGENTS.md` modification in the current task.
+- The agent MUST NOT include `./AGENTS.md` in automatic documentation updates, companion-file updates, formatting passes, cleanup passes, refactors, repository-wide rewrites, or Codex-generated maintenance changes.
+- The agent MUST NOT modify `./AGENTS.md` merely to make the current task easier, to resolve perceived instruction conflicts, to align it with generated code, or to adapt the repository rules to the agent's preferred workflow.
+- If a requested task affects scripts, documentation, specifications, source code, tests, configuration, or repository structure, `./AGENTS.md` MUST remain unchanged unless the user explicitly names `AGENTS.md` as a file to update.
+- If a diff, patch, commit, or generated change includes an unintended modification to `./AGENTS.md`, the agent MUST stop and revert that `AGENTS.md` change before continuing.
+- Only the user may decide to change `./AGENTS.md`; the agent's role is to apply it, not to maintain, reinterpret, or self-edit it.
+
+### 2.2 `CLAUDE.md` symlink protection rule
+
+- If a file named exactly `./CLAUDE.md` exists at the repository root, the agent MUST NOT modify, rewrite, reformat, normalize, rename, delete, move, regenerate, version-bump, or otherwise alter `./CLAUDE.md` during repository work unless the user explicitly requests a `CLAUDE.md` modification in the current task.
+- `./CLAUDE.md` is expected to be a symbolic link pointing to `./AGENTS.md`.
+- The required repository state is exactly:
+  - `CLAUDE.md -> AGENTS.md`
+- If `./CLAUDE.md` does not exist, the agent MUST create it as a symbolic link to `./AGENTS.md` when repository instruction-file setup, validation, synchronization, bootstrap, or rule-compliance work is being performed.
+- If `./CLAUDE.md` exists but is not a symbolic link to `./AGENTS.md`, the agent MUST replace it automatically with the correct symbolic link to `./AGENTS.md`.
+- This replacement MUST be performed without asking for additional confirmation, because `./CLAUDE.md` is not an independent source file in this repository.
+- Replacement means removing the incorrect `./CLAUDE.md` path and recreating it exactly as a symbolic link pointing to `./AGENTS.md`.
+- The expected corrective command is:
+
+```bash
+rm -f ./CLAUDE.md
+ln -s AGENTS.md ./CLAUDE.md
+```
+
+- If `./CLAUDE.md` is a directory or cannot be safely removed with `rm -f`, the agent MUST stop and report the blocking filesystem state instead of forcing a recursive deletion.
+- The agent MUST NOT maintain a separate Claude-specific instruction file with duplicated content.
+- The agent MUST NOT copy the content of `./AGENTS.md` into `./CLAUDE.md`.
+- The agent MUST NOT treat `./CLAUDE.md` as an independent source of repository rules.
+- `./AGENTS.md` remains the master instruction file; `./CLAUDE.md` is only a compatibility pointer for tools that look for a Claude instruction filename.
+- If a diff, patch, commit, or generated change includes an unintended modification to `./CLAUDE.md` content or breaks the symbolic link relationship, the agent MUST stop and revert that `CLAUDE.md` change before continuing.
 
 ## 3. Language and communication rules
 

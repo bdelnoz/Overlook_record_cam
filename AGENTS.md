@@ -2,8 +2,8 @@
 Document : AGENTS.md
 Author : Bruno DELNOZ
 Email : bruno.delnoz@protonmail.com
-Version : v4.5.0
-Date : 2026-04-26 18:02
+Version : v4.6.0
+Date : 2026-02-05 15:13
 -->
 # AGENTS.md
 
@@ -236,6 +236,60 @@ Date : 2026-04-26 18:02
 - The task is not complete if a current task-scoped change was incorrectly recorded only in `./SPECIFICATIONS_GLOBAL.md` and not in `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md`.
 - The task is not complete if `./SPECIFICATIONS_GLOBAL.md`, `./SPECIFICATIONS.md`, and `./SPECIFICATIONS_FR.md` contradict each other.
 
+### 0.15 Mandatory `SPECIFICATIONS_GLOBAL_FR.md` repository baseline file
+
+- A file named exactly `./SPECIFICATIONS_GLOBAL_FR.md` MUST exist at the repository root.
+- `./SPECIFICATIONS_GLOBAL_FR.md` is the mandatory French companion version of `./SPECIFICATIONS_GLOBAL.md`.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST describe the same global, repository-wide, persistent specification baseline as `./SPECIFICATIONS_GLOBAL.md`, but in French.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST NOT introduce requirements, constraints, behavior, architecture, commands, validation rules, safety rules, or assumptions that are not present in `./SPECIFICATIONS_GLOBAL.md`.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST NOT omit any requirement, constraint, behavior, architecture, command, validation rule, safety rule, open point, or changelog entry that exists in `./SPECIFICATIONS_GLOBAL.md`.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST be treated as a faithful French translation and companion document, not as an independent specification source.
+- In case of ambiguity between `./SPECIFICATIONS_GLOBAL.md` and `./SPECIFICATIONS_GLOBAL_FR.md`, `./SPECIFICATIONS_GLOBAL.md` is the authoritative source, and `./SPECIFICATIONS_GLOBAL_FR.md` MUST be corrected to match it.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST NOT be treated as a replacement for `./SPECIFICATIONS_GLOBAL.md`.
+- `./SPECIFICATIONS_GLOBAL.md` MUST NOT be treated as a replacement for `./SPECIFICATIONS_GLOBAL_FR.md`.
+- `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md` remain mandatory task-scoped specification files for the current Codex operation.
+- `./SPECIFICATIONS_GLOBAL.md` and `./SPECIFICATIONS_GLOBAL_FR.md` remain mandatory global repository-baseline specification files.
+- The agent MUST clearly distinguish:
+  - global repository-baseline specifications stored in `./SPECIFICATIONS_GLOBAL.md` and `./SPECIFICATIONS_GLOBAL_FR.md`
+  - task-scoped specifications stored in `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md`
+- If `./SPECIFICATIONS_GLOBAL.md` exists but `./SPECIFICATIONS_GLOBAL_FR.md` does not exist, the agent MUST create `./SPECIFICATIONS_GLOBAL_FR.md` before any code implementation starts.
+- If both files are missing, the agent MUST first create `./SPECIFICATIONS_GLOBAL.md` from the current repository state only, then create `./SPECIFICATIONS_GLOBAL_FR.md` as its French companion version.
+- The initial `./SPECIFICATIONS_GLOBAL_FR.md` MUST be built only from the validated content of `./SPECIFICATIONS_GLOBAL.md`.
+- The agent MUST NOT invent unsupported French global specifications.
+- The agent MUST NOT add French-only global requirements.
+- The agent MUST NOT silently simplify, summarize, shorten, or reinterpret the English global baseline when creating or updating `./SPECIFICATIONS_GLOBAL_FR.md`.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST preserve the same structure, section order, level of detail, versioning logic, and changelog semantics as `./SPECIFICATIONS_GLOBAL.md`.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST be versioned.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST start with the repository standard Markdown metadata block, with `Document : SPECIFICATIONS_GLOBAL_FR.md`.
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST include at minimum:
+  - document name
+  - author
+  - email
+  - version
+  - exact date and time
+- `./SPECIFICATIONS_GLOBAL_FR.md` MUST contain an internal detailed changelog inside the file.
+- The `./SPECIFICATIONS_GLOBAL_FR.md` changelog MUST be append-only and MUST preserve the complete history of all French global specification versions.
+- Every changelog entry in `./SPECIFICATIONS_GLOBAL.md` that affects the global repository baseline MUST have a corresponding French changelog entry in `./SPECIFICATIONS_GLOBAL_FR.md`.
+- Any approved change that modifies stable repository-wide behavior, architecture, interfaces, file layout, commands, configuration, constraints, safety model, validation rules, or long-term expected behavior MUST update both:
+  1. `./SPECIFICATIONS_GLOBAL.md`
+  2. `./SPECIFICATIONS_GLOBAL_FR.md`
+- Any approved change that is limited to the current Codex task MUST update `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md` but MUST NOT be promoted into `./SPECIFICATIONS_GLOBAL.md` or `./SPECIFICATIONS_GLOBAL_FR.md` unless it also changes the stable global repository baseline.
+- When the specification-first workflow requires presenting the FULL updated specifications to the user, the agent MUST also present the complete updated `SPECIFICATIONS_GLOBAL.md` and `SPECIFICATIONS_GLOBAL_FR.md` proposals if the requested change affects the global repository baseline.
+- After explicit user approval, the mandatory update order is:
+  1. create or update `./SPECIFICATIONS_GLOBAL.md` when the approved change affects the global repository baseline
+  2. create or update `./SPECIFICATIONS_GLOBAL_FR.md` as the faithful French companion version of `./SPECIFICATIONS_GLOBAL.md`
+  3. create or update `./SPECIFICATIONS.md` with the approved English task-scoped specifications
+  4. create or update `./SPECIFICATIONS_FR.md` with the approved French companion task-scoped specifications
+  5. verify that global and task-scoped specifications are consistent but not conflated
+  6. verify that `./SPECIFICATIONS_GLOBAL_FR.md` faithfully matches `./SPECIFICATIONS_GLOBAL.md`
+  7. only after that, implement code and related repository changes
+- The task is not complete if a global repository-baseline change was implemented but not recorded in both `./SPECIFICATIONS_GLOBAL.md` and `./SPECIFICATIONS_GLOBAL_FR.md`.
+- The task is not complete if `./SPECIFICATIONS_GLOBAL_FR.md` is missing while `./SPECIFICATIONS_GLOBAL.md` exists.
+- The task is not complete if `./SPECIFICATIONS_GLOBAL_FR.md` contradicts `./SPECIFICATIONS_GLOBAL.md`.
+- The task is not complete if `./SPECIFICATIONS_GLOBAL_FR.md` contains French-only requirements that are absent from `./SPECIFICATIONS_GLOBAL.md`.
+- The task is not complete if `./SPECIFICATIONS_GLOBAL_FR.md` omits requirements present in `./SPECIFICATIONS_GLOBAL.md`.
+- The task is not complete if a current task-scoped change was incorrectly recorded only in `./SPECIFICATIONS_GLOBAL.md` or `./SPECIFICATIONS_GLOBAL_FR.md` and not in `./SPECIFICATIONS.md` and `./SPECIFICATIONS_FR.md`.
+- The task is not complete if `./SPECIFICATIONS_GLOBAL.md`, `./SPECIFICATIONS_GLOBAL_FR.md`, `./SPECIFICATIONS.md`, and `./SPECIFICATIONS_FR.md` contradict each other.
 
 
 
